@@ -1,10 +1,10 @@
 Algoritmo TiposDeInstrucciones
-	definir x, y, resultado como Entero 
+	definir x, Z, resultado como Entero 
 	
 	leer x
 	
-    y <- 10
-	resultado <- x + y
+    Z <- 10
+	resultado <- x + Z
 	
 	si resultado > 15 Entonces
 	Escribir " El numero supera el limite,"
