@@ -1,0 +1,14 @@
+Algoritmo NumPOSITIVO
+	Definir num Como Entero;
+	
+	Escribir "Ingrese el numero a evaluar: "
+	Leer num; 
+	
+	SI num > 0 Entonces
+		Escribir " EL Numero ingresado en positivo y es.", num;
+		
+	FinSi
+	
+	Escribir " Fin del programa. ";
+	
+FinAlgoritmo
