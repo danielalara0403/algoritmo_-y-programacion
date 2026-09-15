@@ -7,7 +7,9 @@ Algoritmo NumPOSITIVO
 	SI num > 0 Entonces
 		Escribir " EL Numero ingresado en positivo y es.", num;
 		
-	FinSi
+FinSi
+Escribir " EL Numero ingresado es negativo y es. ", num;
+Finsi
 	
 	Escribir " Fin del programa. ";
 	
