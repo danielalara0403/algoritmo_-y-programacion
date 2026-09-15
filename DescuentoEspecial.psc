@@ -5,8 +5,8 @@ Algoritmo DescuentoEspecial
 	Leer montocompra;
 	
 	montofinal <- montocompra;
-	SI montocompra > 100 Entonces 
-		descuento <- montocompra * 0.10;
+	SI montocompra > 1500 Entonces 
+		descuento <- montocompra * 0.11;
 		montofinal <- montocompra - descuento;
 		Escribir " ¡ felicidades ! Ha recibido un descuento de: $", descuento
 	FinSi
