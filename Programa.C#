@@ -1,5 +1,5 @@
+
 using System;
-using System.ComponentModel.Design;
 
 public class HalloWorld {
     //crear un programa que muestre un menu con 3 opciones y ejecute  
@@ -16,7 +16,20 @@ public class HalloWorld {
 
         switch (opcion) {
             case 1:
-                Console.WriteLine("Â¡HOLA! Bienvenido Â¡!");
+                Console.WriteLine("Ingrese su nombre: ");
+                string name = Console.ReadLine();
+
+                Console.WriteLine("Ingrese su edad");
+                int age = int.Parse(Console.ReadLine());
+
+                Console.WriteLine("Ingrese su Genero F/M");
+                string gender = Console.ReadLine();
+
+                Console.WriteLine("Ingrese su facultad");
+                string faculty = Console.ReadLine();
+
+                Console.WriteLine("Ingrese su Programa Academico");
+                string promag = Console.ReadLine();
                 break;
             case 2:
                 Console.WriteLine("La fecha actual es:" + DateTime.Now);
@@ -30,3 +43,5 @@ public class HalloWorld {
                 break;
         }
     }
+}
+       
