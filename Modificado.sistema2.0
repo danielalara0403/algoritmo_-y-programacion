@@ -1,0 +1,75 @@
+using System;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int cantidadArchivos = 0;
+
+            // Validar la cantidad de archivos
+            do
+            {
+                Console.Write("Ingrese la cantidad de archivos a descargar: ");
+
+                if (!int.TryParse(Console.ReadLine(), out cantidadArchivos)
+                    || cantidadArchivos <= 0)
+                {
+                    Console.WriteLine("Cantidad inválida. Ingrese un número mayor que cero.");
+                    cantidadArchivos = 0;
+                }
+
+            } while (cantidadArchivos <= 0);
+
+            int archivosDescargados = 0;
+            double totalMB = 0;
+
+            // Procesar cada archivo
+            for (int i = 1; i <= cantidadArchivos; i++)
+            {
+                Console.Write($"\nArchivo #{i} - Nombre (escriba 'salir' para cancelar): ");
+                string nombre = Console.ReadLine()?.Trim() ?? "";
+
+                // Cancelar el proceso
+                if (nombre.Equals("salir", StringComparison.OrdinalIgnoreCase))
+                {
+                    Console.WriteLine("\n>> Proceso de descarga cancelado.");
+                    break;
+                }
+
+                // Validar que el nombre no esté vacío
+                if (string.IsNullOrWhiteSpace(nombre))
+                {
+                    Console.WriteLine(">> Nombre inválido. Archivo omitido.");
+                    continue;
+                }
+
+                // Solicitar y validar el tamaño
+                Console.Write("Tamaño en MB: ");
+
+                if (!double.TryParse(Console.ReadLine(), out double tamanio)
+                    || tamanio <= 0)
+                {
+                    Console.WriteLine(">> Tamaño inválido. Archivo omitido.");
+                    continue;
+                }
+
+                // Simular la descarga
+                Console.WriteLine($">> Descargando '{nombre}' ({tamanio} MB)... OK");
+
+                archivosDescargados++;
+                totalMB += tamanio;
+            }
+
+            // Mostrar el resumen
+            Console.WriteLine("\n========== RESUMEN DE DESCARGA ==========");
+            Console.WriteLine($"Archivos descargados: {archivosDescargados}");
+            Console.WriteLine($"Total descargado: {totalMB:F2} MB");
+            Console.WriteLine("==========================================");
+
+            Console.WriteLine("\nPresione una tecla para salir...");
+            Console.ReadKey();
+        }
+    }
+}
